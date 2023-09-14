@@ -45,7 +45,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
 
 
-
 class Recipe(models.Model):
     """Recipe object."""
     user = models.ForeignKey(
@@ -70,7 +69,6 @@ class Tag(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-
 
     def __str__(self):
         return self.name
