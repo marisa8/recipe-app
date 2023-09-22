@@ -65,10 +65,10 @@ class ModelTests(TestCase):
         )
         recipe = models.Recipe.objects.create(
             user=user,
-            title='Sample Recipe name',
+            title='Sample recipe name',
             time_minutes=5,
             price=Decimal('5.50'),
-            description='Sample recipe description',
+            description='Sample receipe description.',
         )
 
         self.assertEqual(str(recipe), recipe.title)
@@ -90,7 +90,7 @@ class ModelTests(TestCase):
 
         self.assertEqual(str(ingredient), ingredient.name)
 
-    @patch('uuid.uuid4')
+    @patch('core.models.uuid.uuid4')
     def test_recipe_file_name_uuid(self, mock_uuid):
         """Test generating image path."""
         uuid = 'test-uuid'
